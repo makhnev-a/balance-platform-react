@@ -5,7 +5,8 @@
   "author": "Makhnev Andrey <andrey.makhnev@wifire.ru>",
   "license": "MIT",
   "scripts": {
-    "dev": "webpack-dev-server --config ./webpack.config.js --mode development"
+    "dev": "webpack-dev-server --config webpack.config.dev.js --mode development",
+    "build": "webpack -p --config webpack.config.prod.js --mode production"
   },
   "devDependencies": {
     "@babel/core": "^7.11.6",
@@ -14,6 +15,8 @@
     "@babel/preset-react": "^7.10.4",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.1.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "compression-webpack-plugin": "^5.0.2",
     "eslint": "^7.8.1",
     "eslint-config-airbnb": "^18.2.0",
     "eslint-config-prettier": "^6.11.0",
@@ -22,9 +25,11 @@
     "eslint-plugin-react": "^7.20.6",
     "eslint-plugin-react-hooks": "^4.1.2",
     "html-webpack-plugin": "^4.4.1",
+    "uglifyjs-webpack-plugin": "^2.2.0",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12",
-    "webpack-dev-server": "^3.11.0"
+    "webpack-dev-server": "^3.11.0",
+    "webpack-merge": "^5.1.4"
   },
   "dependencies": {
     "react": "^16.13.1",
