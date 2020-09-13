@@ -19,6 +19,7 @@
     "react/jsx-one-expression-per-line": 0,
     "import/prefer-default-export": 0,
     "global-require": 0,
-    "linebreak-style": [0, "error", "windows"]
+    "linebreak-style": [0, "error", "windows"],
+    "jsx-a11y/label-has-associated-control": 0
   }
 }
