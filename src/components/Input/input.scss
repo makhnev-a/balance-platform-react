@@ -1,0 +1,31 @@
+.input__box {
+  position: relative;
+
+  input {
+    padding: 15px 20px;
+    background-color: rgb(240, 240, 240);
+    color: rgb(64, 64, 64);
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 15px;
+
+    &:valid + label {
+
+    }
+
+    &:focus + label {
+      bottom: 100%;
+      margin-top: -12px;
+      font-size: 12px;
+    }
+  }
+
+  label {
+    position: absolute;
+    top: 14px;
+    left: 20px;
+    width: 100%;
+    transition: .2s;
+    color: rgb(163, 163, 163);
+  }
+}
