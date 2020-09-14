@@ -1,5 +1,10 @@
 .input {
   position: relative;
+  width: 100%;
+
+  @media screen and (max-width: 415px){
+    font-size: 12px;
+  }
 
   &__input {
     padding: 15px 20px;
@@ -8,11 +13,19 @@
     border: none;
     border-radius: 5px;
     margin-bottom: 15px;
+    width: 100%;
+    box-sizing: border-box;
+    box-shadow: none;
+    outline: none;
 
     &:focus + label {
       bottom: 100%;
       transform: translateY(-12px);
       font-size: 12px;
+
+      @media screen and (max-width: 415px) {
+        font-size: 10px;
+      }
     }
   }
 
