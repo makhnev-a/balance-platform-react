@@ -12,7 +12,8 @@ export const Input = ({type, value, valid, touched, label, errorMessage, shouldV
   const forId = `${type}-${Math.random()}`;
 
   return (
-    <div className={hasLength ? 'input input--toTop' : 'input'}>
+    // <div className={hasLength ? 'input input--toTop' : 'input'}>
+    <div className={hasLength ? 'input input--toTop' : controlName === 'gender' || controlName === 'birthDate' || controlName === 'email' || controlName === 'phone' ? 'input input__part' : 'input'}>
       <input
         onChange={event => onChangeH(event, controlName)}
         className='input__input'

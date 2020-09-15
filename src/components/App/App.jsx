@@ -6,6 +6,77 @@ export default () => {
   const [isFormValid, setIsFormValid] = useState(false);
   // eslint-disable-next-line no-unused-vars,no-undef
   const [state, setState] = useState({
+    lastName: {
+      value: '',
+      type: 'text',
+      label: 'Фамилия',
+      errorMessage: 'Введите корректную фамилию',
+      valid: false,
+      touched: false,
+      validations: {
+        required: true,
+        minLength: 15
+      }
+    },
+    firstName: {
+      value: '',
+      type: 'text',
+      label: 'Имя',
+      errorMessage: 'Введите корректное имя',
+      valid: false,
+      touched: false,
+      validations: {
+        required: true,
+        minLength: 10
+      }
+    },
+    surName: {
+      value: '',
+      type: 'text',
+      label: 'Отчество',
+      errorMessage: 'Введите корректное отчество',
+      valid: false,
+      touched: false,
+      validations: {
+        required: true,
+        minLength: 15
+      }
+    },
+    gender: {
+      value: '',
+      type: 'text',
+      label: 'Пол',
+      errorMessage: 'Введите корректный пол',
+      valid: false,
+      touched: false,
+      validations: {
+        required: true,
+        minLength: 7
+      }
+    },
+    birthDate: {
+      value: '',
+      type: 'text',
+      label: 'Дата рождения',
+      errorMessage: 'Введите дату рождения',
+      valid: false,
+      touched: false,
+      validations: {
+        required: true
+      }
+    },
+    phone: {
+      value: '',
+      type: 'text',
+      label: 'Мобильный телефон',
+      errorMessage: 'Поле является обязательным',
+      valid: false,
+      touched: false,
+      validations: {
+        required: true,
+        minLength: 15
+      }
+    },
     email: {
       value: '',
       type: 'email',
@@ -18,18 +89,31 @@ export default () => {
         email: true
       }
     },
-    lastName: {
+    address: {
       value: '',
       type: 'text',
-      label: 'Фамилия',
-      errorMessage: 'Введите корректную фамилию',
+      label: 'Адрес постоянной регистрации',
+      errorMessage: 'Введите корректный email',
       valid: false,
       touched: false,
       validations: {
         required: true,
-        minLength: 6
+        minLength: 20
       }
-    }
+    },
+    workName: {
+      value: '',
+      type: 'text',
+      label: 'Название работодателя',
+      errorMessage: 'Введите корректный email',
+      valid: false,
+      touched: false,
+      validations: {
+        required: true,
+        minLength: 20
+      }
+    },
+
   });
 
   const validateControl = (value, validations) => {
@@ -55,7 +139,6 @@ export default () => {
   };
 
   const onChangeHandler = (event, controlName) => {
-    // debugger;
     console.log(`${controlName}: `, event.currentTarget.value)
 
     const formControls = {...state};
@@ -91,7 +174,6 @@ export default () => {
           label={control.label}
           errorMessage={control.errorMessage}
           shouldValidate={!!control.validations}
-          // onChangeH={event => onChangeHandler(event, controlName)}
           controlName={controlName}
           onChangeH={onChangeHandler}
         />
@@ -104,6 +186,9 @@ export default () => {
       <h1>App component</h1>
       <div className='form__box'>
         {returnInputs()}
+        <button
+          className='form__btn'
+        >сохранить</button>
       </div>
     </div>
   );

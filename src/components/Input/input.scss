@@ -2,7 +2,19 @@
   position: relative;
   width: 100%;
 
-  @media screen and (max-width: 415px){
+  &__part {
+    width: 46%;
+
+    @media screen and (max-width: 715px) {
+      width: 100%;
+    }
+
+    @media screen and (max-width: 415px) {
+      width: 100%;
+    }
+  }
+
+  @media screen and (max-width: 415px) {
     font-size: 12px;
   }
 
@@ -47,7 +59,6 @@
   &__span {
     color: #f01f30;
     font-size: 12px;
-    //font-weight: bold;
   }
 
   &.invalid .input__label {
