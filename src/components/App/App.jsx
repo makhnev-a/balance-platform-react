@@ -10,19 +10,19 @@ export default () => {
       value: '',
       type: 'text',
       label: 'Фамилия',
-      errorMessage: 'Введите корректную фамилию',
+      errorMessage: 'Поле является обзательным',
       valid: false,
       touched: false,
       validations: {
         required: true,
-        minLength: 15
+        minLength: 5
       }
     },
     firstName: {
       value: '',
       type: 'text',
       label: 'Имя',
-      errorMessage: 'Введите корректное имя',
+      errorMessage: 'Поле является обзательным',
       valid: false,
       touched: false,
       validations: {
@@ -34,31 +34,27 @@ export default () => {
       value: '',
       type: 'text',
       label: 'Отчество',
-      errorMessage: 'Введите корректное отчество',
+      errorMessage: 'Отчество должно быть больше 5 букв',
       valid: false,
       touched: false,
       validations: {
-        required: true,
-        minLength: 15
+        minLength: 5
       }
     },
     gender: {
       value: '',
       type: 'text',
       label: 'Пол',
-      errorMessage: 'Введите корректный пол',
+      errorMessage: 'Выберете пол',
       valid: false,
       touched: false,
-      validations: {
-        required: true,
-        minLength: 7
-      }
+      validations: {}
     },
     birthDate: {
       value: '',
       type: 'text',
       label: 'Дата рождения',
-      errorMessage: 'Введите дату рождения',
+      errorMessage: 'Поле является обзательным',
       valid: false,
       touched: false,
       validations: {
@@ -81,7 +77,7 @@ export default () => {
       value: '',
       type: 'email',
       label: 'Email',
-      errorMessage: 'Введите корректный email',
+      errorMessage: 'Поле является обзательным',
       valid: false,
       touched: false,
       validations: {
@@ -93,25 +89,19 @@ export default () => {
       value: '',
       type: 'text',
       label: 'Адрес постоянной регистрации',
-      errorMessage: 'Введите корректный email',
+      errorMessage: '',
       valid: false,
       touched: false,
-      validations: {
-        required: true,
-        minLength: 20
-      }
+      validations: {}
     },
     workName: {
       value: '',
       type: 'text',
       label: 'Название работодателя',
-      errorMessage: 'Введите корректный email',
+      errorMessage: '',
       valid: false,
       touched: false,
-      validations: {
-        required: true,
-        minLength: 20
-      }
+      validations: {}
     },
 
   });
