@@ -1,8 +1,9 @@
 import React, {useState} from 'react';
-import {Input} from "../Input/Input";
 import is from 'is_js';
+import {Input} from "../Input/Input";
 
 export default () => {
+  // eslint-disable-next-line no-unused-vars
   const [isFormValid, setIsFormValid] = useState(false);
   // eslint-disable-next-line no-unused-vars,no-undef
   const [state, setState] = useState({
@@ -15,7 +16,7 @@ export default () => {
       touched: false,
       validations: {
         required: true,
-        minLength: 5
+        minLength: 3
       }
     },
     firstName: {
@@ -27,7 +28,7 @@ export default () => {
       touched: false,
       validations: {
         required: true,
-        minLength: 10
+        minLength: 2
       }
     },
     surName: {
@@ -35,10 +36,10 @@ export default () => {
       type: 'text',
       label: 'Отчество',
       errorMessage: 'Отчество должно быть больше 5 букв',
-      valid: false,
+      valid: true,
       touched: false,
       validations: {
-        minLength: 5
+        // minLength: 6
       }
     },
     gender: {
@@ -46,13 +47,17 @@ export default () => {
       type: 'text',
       label: 'Пол',
       errorMessage: 'Выберете пол',
-      valid: false,
+      valid: true,
       touched: false,
-      validations: {}
+      validations: {},
+      options: [
+        {text: 'Мужской', value: 'Мужской'},
+        {text: 'Женский', value: 'Женский'}
+      ]
     },
     birthDate: {
       value: '',
-      type: 'text',
+      type: 'date',
       label: 'Дата рождения',
       errorMessage: 'Поле является обзательным',
       valid: false,
@@ -77,7 +82,7 @@ export default () => {
       value: '',
       type: 'email',
       label: 'Email',
-      errorMessage: 'Поле является обзательным',
+      errorMessage: 'Введен некорректный адрес почты',
       valid: false,
       touched: false,
       validations: {
@@ -90,7 +95,7 @@ export default () => {
       type: 'text',
       label: 'Адрес постоянной регистрации',
       errorMessage: '',
-      valid: false,
+      valid: true,
       touched: false,
       validations: {}
     },
@@ -99,7 +104,7 @@ export default () => {
       type: 'text',
       label: 'Название работодателя',
       errorMessage: '',
-      valid: false,
+      valid: true,
       touched: false,
       validations: {}
     },
@@ -129,8 +134,6 @@ export default () => {
   };
 
   const onChangeHandler = (event, controlName) => {
-    console.log(`${controlName}: `, event.currentTarget.value)
-
     const formControls = {...state};
     const control = {...formControls[controlName]};
 
@@ -171,14 +174,23 @@ export default () => {
     })
   };
 
+  const btnSubmitHandler = () => alert(`Форма валидна, отправляется запрос!`);
+
+  console.log(isFormValid);
+
   return (
     <div>
       <h1>App component</h1>
       <div className='form__box'>
         {returnInputs()}
         <button
-          className='form__btn'
-        >сохранить</button>
+          type='button'
+          className={isFormValid ? 'form__btn' : 'form__btn form__btn--disable'}
+          disabled={!isFormValid}
+          onClick={btnSubmitHandler}
+        >
+          сохранить
+        </button>
       </div>
     </div>
   );

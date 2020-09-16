@@ -1,4 +1,5 @@
 @import "../components/Input/input";
+@import "./node_modules/react-datepicker/src/stylesheets/datepicker.scss";
 
 body {
   margin: 0;
@@ -40,4 +41,9 @@ body {
   outline: none;
   text-transform: uppercase;
   margin-left: auto;
+  cursor: pointer;
+
+  &--disable {
+    background-color: rgba(106, 182, 113, .5);
+  }
 }
